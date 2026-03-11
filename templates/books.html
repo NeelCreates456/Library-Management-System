@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="page-title">Available Books</h1>
+
+<input type="text" id="searchInput" placeholder="Search books..." class="search-bar">
+
+<!-- Programming Section -->
+
+<h2 class="section-title">Programming</h2>
+
+<div class="book-grid">
+
+{% for book in books %}
+{% if book.category == "Programming" %}
+
+<div class="book-card" data-title="{{ book.title }}">
+
+<img src="{{ url_for('static', filename='images/' + book.image) }}">
+
+<h3>{{ book.title }}</h3>
+
+<p>Author: {{ book.author }}</p>
+
+{% if book.issued %}
+
+<button style="background:#ff4d4d;" disabled>Issued</button>
+
+{% else %}
+
+<a href="/issue/{{ book.title }}">
+<button>Issue Book</button>
+</a>
+
+{% endif %}
+
+</div>
+
+{% endif %}
+{% endfor %}
+
+</div>
+
+
+<!-- Business Section -->
+
+<h2 class="section-title">Business</h2>
+
+<div class="book-grid">
+
+{% for book in books %}
+{% if book.category == "Business" %}
+
+<div class="book-card" data-title="{{ book.title }}">
+
+<img src="{{ url_for('static', filename='images/' + book.image) }}">
+
+<h3>{{ book.title }}</h3>
+
+<p>Author: {{ book.author }}</p>
+
+{% if book.issued %}
+
+<button style="background:#ff4d4d;" disabled>Issued</button>
+
+{% else %}
+
+<a href="/issue/{{ book.title }}">
+<button>Issue Book</button>
+</a>
+
+{% endif %}
+
+</div>
+
+{% endif %}
+{% endfor %}
+
+</div>
+
+
+<!-- Comics Section -->
+
+<h2 class="section-title">Comics</h2>
+
+<div class="book-grid">
+
+{% for book in books %}
+{% if book.category == "Comics" %}
+
+<div class="book-card" data-title="{{ book.title }}">
+
+<img src="{{ url_for('static', filename='images/' + book.image) }}">
+
+<h3>{{ book.title }}</h3>
+
+<p>Author: {{ book.author }}</p>
+
+{% if book.issued %}
+
+<button style="background:#ff4d4d;" disabled>Issued</button>
+
+{% else %}
+
+<a href="/issue/{{ book.title }}">
+<button>Issue Book</button>
+</a>
+
+{% endif %}
+
+</div>
+
+{% endif %}
+{% endfor %}
+
+</div>
+
+{% endblock %}
