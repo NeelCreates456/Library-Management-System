@@ -32,5 +32,19 @@ app.py templates/ static/
 
    ## Author
 
+   ## Project Screenshots
+
+### Login Page
+![Login Page](login.png)
+
+### Books Page
+![Books Page](books.png)
+
+### Dashboard
+![Dashboard](dashboard.png)
+
+### Fine Calculation
+![Fine Page](fine.png)
+
 Nirmalya  
 B.Tech CSE (AI & ML)
