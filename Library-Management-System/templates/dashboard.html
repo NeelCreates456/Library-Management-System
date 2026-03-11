@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="page-title">My Issued Books</h1>
+
+<div class="issued-container">
+
+{% for book in books %}
+
+<div class="issued-card">
+
+📚 <b>{{ book.title }}</b><br>
+
+📅 Issued on: {{ book.issue_date.strftime("%d %b %Y") }} <br>
+
+⏳ Due on: {{ (book.issue_date + timedelta(days=7)).strftime("%d %b %Y") }} <br>
+
+<a href="/return/{{ book.title }}">
+<button class="return-btn">Return</button>
+</a>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}
